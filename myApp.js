@@ -17,6 +17,11 @@ app.get('/', function(req, res) {
 absolutestaticPath = __dirname + '/public';
 app.use('/public', express.static(absolutestaticPath));
 
+//creating simple api to send JSON - js obj notation
+app.get('/json', function(req, res) {
+    res.json({"message": "Hello json"});
+  })
+
 
 
 
