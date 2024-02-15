@@ -12,6 +12,11 @@ app.get('/', function(req, res) {
     res.sendFile(absolutePath);
   })
 
+//static assest like stylesheet, script can be added using middleware
+//a middleware function (in this case express.static) is mounted by using app.use
+absolutestaticPath = __dirname + '/public';
+app.use('/public', express.static(absolutestaticPath));
+
 
 
 
