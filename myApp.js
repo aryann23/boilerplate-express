@@ -45,6 +45,10 @@ app.get('/json', function(req, res) {
     res.json({"time": req.time});
   });
 
+//adding route parameter
+app.get('/:word/echo', function(req, res){
+    res.json({'echo': req.params.word})
+});
   
 
 
