@@ -2,6 +2,13 @@ require('dotenv').config();
 let express = require('express');
 let app = express();
 
+//logging root level middleware here
+app.use((req, res, next) => {
+  let string = `${req.method} ${req.path} - ${req.ip}`;
+  console.log(string);
+  next();
+});
+
 console.log("Hello World");
 
 //- added app.METHOD(PATH, HANDLER) where method = get.
@@ -31,12 +38,7 @@ app.get('/json', function(req, res) {
     
   });
 
-  //logging root level middleware here
-  app.use((req, res, next) => {
-    let string = `${req.method} ${req.path} - ${req.ip}`;
-    console.log(string);
-    next();
-  });
+  
 
 
 
