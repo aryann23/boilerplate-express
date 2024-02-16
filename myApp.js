@@ -65,7 +65,14 @@ app.route('/name').get(function(req, res){
 
   let jasonObj = {name: `${first} ${last}`};
   res.send(jasonObj);
-}).post();
+}).post(function(req, res){
+
+  let first = req.body.first;
+  let last = req.body.last;
+
+  let jasonObj = {name: `${first} ${last}`};
+  res.send(jasonObj);
+});
 
 
 
