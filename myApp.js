@@ -75,36 +75,4 @@ app.route('/name').get(function(req, res){
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  module.exports = app;
