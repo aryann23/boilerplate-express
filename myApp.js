@@ -49,8 +49,15 @@ app.get('/json', function(req, res) {
 app.get('/:word/echo', function(req, res){
     res.json({'echo': req.params.word})
 });
-  
 
+//adding query parameter input
+app.route('/name').get(function(req, res){
+  let first = req.query.first;
+  let last = req.query.last;
+
+  let jasonObj = {name: `${first} ${last}`};
+  res.send(jasonObj);
+}).post();
 
 
 
